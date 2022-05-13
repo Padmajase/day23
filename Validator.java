@@ -1,35 +1,77 @@
-package com.bridgelabz.day20;
+package com.bridgelabz.day21;
 
+import com.bridgelabz.day20.User;
 import java.util.regex.Pattern;
-/*
-* validating ing all user inputs with pattern
-*/
+
+/**
+* validating all user inputs with pattern
+**/
 public class Validator extends User {
-    static String firstName;
-    /* defining pattern for inputs */
+
+    /** defining pattern for inputs **/
     private static final String FIRST_NAME_PATTERN = "^[A-Z][a-z]{3,}$";
-    private static final String LAST_NAME_PATTERN = "^[A-Za-z]\\w{3,}$";
+    private static final String LAST_NAME_PATTERN = "^[A-Z][a-z]{3,}$";
     private static final String EMAIL_PATTERN = "^[a-zA-Z0-9_.-]+@+[a-zA-z0-9]+[.]+[comaunet]+$";
     private static final String PHONE_PATTERN = "^91+[1-9]{10}$";
     private static final String PASSWORD_PATTERN = "^[[A-Z0-9a-z][@$._-]{1}]{8,}$";
 
+    static boolean f = false;
+
     public static boolean firstNameValidation(String firstName) {
-        return Pattern.matches(FIRST_NAME_PATTERN, firstName);
+        try {
+            if (!Pattern.matches(FIRST_NAME_PATTERN, firstName)) ;
+            else {
+                f = Pattern.matches(FIRST_NAME_PATTERN, firstName);
+            }
+        } catch (Exception ae) {
+            System.out.println("last name is invalid" +ae);
+        }
+        return f;
     }
 
     public static boolean lastNameValidation(String lastName) {
-        return Pattern.matches(LAST_NAME_PATTERN, lastName);
+        try {
+            if (!Pattern.matches(LAST_NAME_PATTERN, lastName)) ;
+            else {
+                f = Pattern.matches(LAST_NAME_PATTERN, lastName);
+            }
+        } catch (Exception ae) {
+            System.out.println("last name is invalid");
+        }
+        return f;
     }
 
     public static boolean emailValidation(String email) {
-        return Pattern.matches(EMAIL_PATTERN, email);
-    }
+        try {
+            if (!Pattern.matches(EMAIL_PATTERN, email)) ;
+            else {
+                f = Pattern.matches(EMAIL_PATTERN, email);
+            }
+        } catch (Exception ae) {
+            System.out.println("last name is invalid");
+        }
+        return f;    }
 
     public static boolean phoneValidation(String phone) {
-        return Pattern.matches(PHONE_PATTERN, phone);
-    }
+        try {
+            if (!Pattern.matches(PHONE_PATTERN, phone)) ;
+            else {
+                f = Pattern.matches(PHONE_PATTERN, phone);
+            }
+        } catch (Exception ae) {
+            System.out.println("last name is invalid");
+        }
+        return f;    }
 
     public static boolean passwordValidation(String password) {
-        return Pattern.matches(PASSWORD_PATTERN, password);
+        try {
+            if (!Pattern.matches(PASSWORD_PATTERN, password)) ;
+            else {
+                f = Pattern.matches(PASSWORD_PATTERN, password);
+            }
+        } catch (Exception ae) {
+            System.out.println("last name is invalid");
+        }
+        return f;
     }
 }
